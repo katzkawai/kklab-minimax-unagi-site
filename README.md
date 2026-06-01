@@ -47,7 +47,7 @@
 
 本サイトは以下の方針でフルスクラッチから作成しています：
 
-| 項目 | 本サイト (kklab-minmax-examples) | 既存サイト (kklab-kiro-unagi-site) |
+| 項目 | 本サイト (kklab-minimax-unagi-site) | 既存サイト (kklab-kiro-unagi-site) |
 |---|---|---|
 | デザイン | 和モダン（朱赤×深緑） | シンプル・洗練（ベージュ×ゴールド） |
 | タイポ | 明朝体（Serif）中心 | ゴシック体（Sans）中心 |
@@ -78,11 +78,11 @@ npm start
 
 ```bash
 # 1) GitHub にリポジトリを作成
-gh repo create kklab-minmax-examples --public --source=. --remote=origin --push
+gh repo create kklab-minimax-unagi-site --public --source=. --remote=origin --push
 
 # 2) GitHub Pages を有効化（リポジトリの Settings > Pages）
 #    Source: "Deploy from a branch"  → Branch: main / (root)
-# 3) 公開URL: https://<user>.github.io/kklab-minmax-examples/
+# 3) 公開URL: https://<user>.github.io/kklab-minimax-unagi-site/
 ```
 
 リポジトリのルートに `index.html` があるため、追加のビルド工程は不要です。
@@ -105,7 +105,7 @@ gh repo create kklab-minmax-examples --public --source=. --remote=origin --push
 ## ファイル構成
 
 ```
-kklab-minmax-examples/
+kklab-minimax-unagi-site/
 ├── README.md
 ├── package.json
 ├── render.yaml
