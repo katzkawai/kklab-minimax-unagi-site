@@ -1,0 +1,15 @@
+{
+  "name": "kklab-minmax-examples",
+  "version": "1.0.0",
+  "description": "浜名湖うなぎ紹介サイト（静的サイト）",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "shoot": "node ../shoot.js ./docs/preview",
+    "serve": "python3 -m http.server 8080"
+  },
+  "keywords": ["unagi", "hamamatsu", "static-site"],
+  "engines": {
+    "node": ">=18"
+  }
+}

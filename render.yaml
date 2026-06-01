@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: hamanako-unagi-site
+    runtime: static
+    plan: free
+    autoDeploy: true
+    branch: main
+    publishPath: .
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
+      - path: /style.css
+        name: Cache-Control
+        value: public, max-age=86400

@@ -2,6 +2,19 @@
 
 観光客向けに浜名湖うなぎの魅力を伝える、和モダンテイストの静的紹介サイト。
 
+## プレビュー
+
+### トップページ
+![トップ](./docs/preview/preview-index.png)
+
+### 料理紹介
+![料理](./docs/preview/preview-dishes.png)
+
+### アクセス
+![アクセス](./docs/preview/preview-access.png)
+
+その他のページやモバイル版は [`docs/preview/`](./docs/preview) を参照してください。
+
 ## 概要
 
 - **目的**: 浜名湖うなぎの歴史・特徴・お店・料理・アクセス情報を観光客に提供
@@ -49,18 +62,67 @@ python3 -m http.server 8080
 # → http://localhost:8080 をブラウザで開く
 ```
 
+または：
+
+```bash
+npm start
+```
+
+## デプロイ
+
+### GitHub Pages
+
+`main` ブランチのルートを Pages として配信する手順：
+
+```bash
+# 1) GitHub にリポジトリを作成
+gh repo create kklab-minmax-examples --public --source=. --remote=origin --push
+
+# 2) GitHub Pages を有効化（リポジトリの Settings > Pages）
+#    Source: "Deploy from a branch"  → Branch: main / (root)
+# 3) 公開URL: https://<user>.github.io/kklab-minmax-examples/
+```
+
+リポジトリのルートに `index.html` があるため、追加のビルド工程は不要です。
+
+### Render
+
+リポジトリ直下に `render.yaml` を配置済みです。
+
+1. Render ダッシュボードで **New +** → **Blueprint** を選択
+2. 本リポジトリを接続
+3. `render.yaml` が自動検出され、`hamanako-unagi-site` という Static Site が作成される
+4. 公開URL: `https://hamanako-unagi-site.onrender.com/`
+
+手動で作成する場合は：
+
+- **Type**: Static Site
+- **Build Command**: （空欄）
+- **Publish Directory**: `.`
+
 ## ファイル構成
 
 ```
 kklab-minmax-examples/
 ├── README.md
+├── package.json
+├── render.yaml
+├── .gitignore
 ├── index.html
 ├── history.html
 ├── shops.html
 ├── dishes.html
 ├── access.html
 ├── style.css
-└── main.js
+├── main.js
+└── docs/
+    └── preview/          # Playwright で生成したスクリーンショット
+        ├── preview-index.png
+        ├── preview-history.png
+        ├── preview-shops.png
+        ├── preview-dishes.png
+        ├── preview-access.png
+        └── *-mobile.png  # モバイル版（390x844）
 ```
 
 ## 注意事項
@@ -73,3 +135,4 @@ kklab-minmax-examples/
 | 日付 | 内容 |
 |---|---|
 | 2026-06-01 | 初回リリース：全5ページ（トップ・歴史・お店・料理・アクセス）を公開 |
+| 2026-06-01 | GitHub Pages / Render 用のデプロイ設定を追加 |
